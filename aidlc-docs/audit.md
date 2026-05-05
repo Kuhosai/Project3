@@ -192,3 +192,172 @@ Docker Compose 구성 포인트
 - Total user stories reduced from 14 to 13
 
 ---
+
+## Workflow Planning - Execution Plan Creation
+**Timestamp**: 2026-04-16T10:00:00Z
+**User Input**: "그다음으로 진행하자"
+**AI Response**: "Created comprehensive execution plan with phase determinations"
+**Context**: INCEPTION - Workflow Planning
+
+### Analysis Completed:
+- Project Type: Greenfield (새로운 URL 단축 서비스)
+- Components: Spring Boot + React + PostgreSQL + Docker Compose
+- Risk Level: Medium (풀스택 통합 복잡도)
+- Impact Areas: User-facing, Structural, Data model, API, NFR
+
+### Execution Plan Decision:
+**EXECUTE Stages**:
+- Application Design (새로운 컴포넌트 및 API 설계 필요)
+- Units Generation (시스템을 7개 구현 단위로 분해)
+- Per-Unit Loop:
+  - Functional Design (데이터 모델, 비즈니스 로직 설계)
+  - NFR Requirements (성능, 보안, 확장성 요구사항)
+  - NFR Design (JWT, OAuth2, @Async 설계)
+  - Infrastructure Design (Docker Compose 설계)
+  - Code Generation (코드 생성)
+- Build and Test (전체 통합 빌드 및 테스트)
+
+**SKIP Stages**:
+- Operations (로컬 개발 환경 전용, PLACEHOLDER)
+
+### Expected Units (7개):
+1. Backend - URL Management Service
+2. Backend - Analytics Service
+3. Backend - Authentication Service
+4. Frontend - URL Creation & Management UI
+5. Frontend - Analytics Dashboard UI
+6. Database - Schema & Migrations
+7. Infrastructure - Docker Compose Setup
+
+### Artifacts Created:
+- aidlc-docs/inception/plans/execution-plan.md
+- Updated aidlc-state.md with execution plan summary
+
+---
+
+## Application Design - Plan Creation
+**Timestamp**: 2026-04-16T10:10:00Z
+**User Input**: "다음 진행할래"
+**AI Response**: "Starting Application Design stage - Creating application design plan"
+**Context**: INCEPTION - Application Design
+
+### Plan Created:
+- Generated application-design-plan.md with 10 design questions
+- Questions cover:
+  - 백엔드 컴포넌트 구조 (3-tier vs Hexagonal vs CQRS)
+  - DTO 전략 (분리 vs 직접 노출)
+  - Base62 인코딩 위치 (Service vs Utility vs Repository)
+  - 비동기 처리 전략 (@Async vs Event vs 메시지 큐)
+  - Spring Security 구성 (표준 vs 커스텀)
+  - React 상태 관리 (Context API vs Redux vs Zustand)
+  - React 라우팅 (React Router vs Next.js)
+  - API 에러 핸들링 (Interceptor vs try-catch)
+  - DB 스키마 관계 (정규화 vs 비정규화)
+  - 통계 쿼리 방식 (JPQL vs Native vs Projection vs QueryDSL)
+
+### Design Execution Plan:
+- Phase 1: 컴포넌트 식별 및 정의
+- Phase 2: 컴포넌트 메서드 정의
+- Phase 3: 서비스 계층 설계
+- Phase 4: 컴포넌트 의존성 분석
+- Phase 5: 통합 문서 생성
+- Phase 6: 설계 검증
+
+---
+
+## Application Design - Answers Collected
+**Timestamp**: 2026-04-16T10:15:00Z
+**User Input**: "작성했어" → Follow-up 질문 → "간단하게 할게"
+**AI Response**: "Updated question 1 to A (3-tier), removed follow-up, proceeding with design generation"
+**Context**: INCEPTION - Application Design
+
+### Final Answers:
+1. 백엔드 컴포넌트 구조: **A (3-tier 구조)** - 변경됨 (원래 C → A)
+2. DTO 전략: **A (DTO 분리)**
+3. Base62 인코딩 위치: **A (Service 계층)**
+4. 비동기 처리: **A (Spring @Async)**
+5. Spring Security 구성: **A (표준 방식)**
+6. React 상태 관리: **A (Context API)**
+7. React 라우팅: **A (React Router v6)**
+8. API 에러 핸들링: **A (Axios Interceptor)**
+9. DB 스키마 관계: **A (정규화)**
+10. 통계 쿼리: **C (JPA Projection)**
+
+---
+
+## Application Design - Artifacts Generated
+**Timestamp**: 2026-04-16T10:20:00Z
+**AI Response**: "Generated 5 application design documents"
+**Context**: INCEPTION - Application Design
+
+### Artifacts Created:
+1. **components.md** (50+ 컴포넌트)
+2. **component-methods.md** (100+ 메서드)
+3. **services.md** (서비스 계층)
+4. **component-dependency.md** (의존성)
+5. **application-design.md** (통합 문서)
+
+---
+
+## Units Generation - Material Design 3 Integration Request
+**Timestamp**: 2026-04-30T15:45:00Z
+**User Input**: "https://m3.material.io/ 여기 사이트 참고해서 디자인 시스템도 적용하고 싶어"
+**AI Response**: "Acknowledged Material Design 3 integration request"
+**Context**: INCEPTION - Units Generation Planning
+
+---
+
+## Units Generation - MUI Library Specification
+**Timestamp**: 2026-04-30T15:46:00Z
+**User Input**: "웹사이트 디자인을 획일화 하고 싶어. 아래 라이브러리를 가져다가 통일화 할 수 있게 만들어줘 npm install @mui/material @emotion/react @emotion/styled"
+**AI Response**: "Updated question 3 in unit-of-work-plan.md to specify MUI (Material-UI) v5+ with packages @mui/material, @emotion/react, @emotion/styled"
+**Context**: INCEPTION - Units Generation Planning
+
+---
+
+## Units Generation - Plan Questions Pre-filled
+**Timestamp**: 2026-04-30T15:47:00Z
+**AI Response**: "Pre-filled all 7 unit decomposition questions with 'A' answers for simplicity (learning project)"
+**Context**: INCEPTION - Units Generation Planning
+
+### Answers:
+1. Unit 분해 전략: **A (Monolith)**
+2. Frontend Unit 분해: **A (Single Frontend Unit)**
+3. Material Design 3 적용: **A (MUI v5+ with @mui/material, @emotion/react, @emotion/styled)**
+4. Database Migration Unit: **A (Backend Unit에 포함)**
+5. Infrastructure Unit 분해: **A (Single Infrastructure Unit)**
+6. Unit 간 의존성 관리: **A (Sequential Development)**
+7. Story-to-Unit Mapping: **A (기능별 그룹핑)**
+
+---
+
+## Units Generation - Artifacts Generated
+**Timestamp**: 2026-04-30T15:50:00Z
+**AI Response**: "Generated 3 unit decomposition documents with Material Design 3 (MUI) integration"
+**Context**: INCEPTION - Units Generation (PART 2: GENERATION)
+
+### Artifacts Created:
+1. **unit-of-work.md** (6 Units with MUI integration plan)
+   - U-001: Backend Core (URL Management, Click Tracking)
+   - U-002: Backend Analytics (Statistics)
+   - U-003: Backend Auth (Authentication, OAuth2, JWT)
+   - U-004: Frontend UI (React + Material Design 3 with MUI v5+)
+   - U-005: Database Schema (PostgreSQL + Flyway)
+   - U-006: Infrastructure (Docker Compose)
+
+2. **unit-of-work-dependency.md** (Dependency matrix, development sequence)
+   - Sequential development: U-005 → U-001 → U-002 → U-003 → U-004 → U-006
+   - Total timeline: 15일 (약 2주)
+
+3. **unit-of-work-story-map.md** (13 User Stories → 6 Units mapping)
+   - 100% coverage achieved
+   - All stories mapped to units
+
+### Key Decisions:
+- **Architecture**: Monolith (단일 Spring Boot 앱 + React 프론트엔드)
+- **Material Design 3**: MUI (Material-UI) v5+ 라이브러리 사용
+- **MUI Packages**: @mui/material, @emotion/react, @emotion/styled
+- **Design System**: MUI Theme로 색상, 타이포그래피, 컴포넌트 스타일 통일
+- **Development Sequence**: Sequential (Database → Backend → Frontend → Infrastructure)
+
+---
