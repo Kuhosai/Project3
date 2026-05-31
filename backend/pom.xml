@@ -87,8 +87,21 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- Unit U-001: GeoIP2 for geolocation -->
+        <dependency>
+            <groupId>com.maxmind.geoip2</groupId>
+            <artifactId>geoip2</artifactId>
+            <version>4.0.0</version>
+        </dependency>
+
+        <!-- Unit U-001: UserAgentUtils for browser/OS/device detection -->
+        <dependency>
+            <groupId>eu.bitwalker</groupId>
+            <artifactId>UserAgentUtils</artifactId>
+            <version>1.21</version>
+        </dependency>
+
         <!-- Additional dependencies will be added in respective units:
-             - Unit U-001: Base62 encoding, GeoLite2, User-Agent parser, Spring Async
              - Unit U-002: Spring Data JPA Projections (included in starter-data-jpa)
              - Unit U-003: Spring Security, JWT (jjwt), OAuth2 Client
              - Unit U-006: Swagger/Springdoc OpenAPI

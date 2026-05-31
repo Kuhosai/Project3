@@ -61,5 +61,11 @@ server:
     include-stacktrace: on_param
     include-exception: false
 
-# Application-specific properties (to be extended in Unit U-001, U-002, U-003)
-# JWT, OAuth2, CORS, Async configuration will be added in respective units
+# Application-specific properties
+# Unit U-001: GeoIP database path
+geoip:
+  database:
+    path: ${GEOIP_DATABASE_PATH:/app/geoip/GeoLite2-City.mmdb}
+
+# Additional properties to be extended in Unit U-002, U-003
+# JWT, OAuth2, CORS configuration will be added in respective units
