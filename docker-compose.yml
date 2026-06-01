@@ -1,0 +1,67 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  db:
+    image: postgres:15
+    container_name: urlshortener-db
+    environment:
+      POSTGRES_DB: urlshortener
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: secret
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    networks:
+      - urlshortener-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  # Spring Boot Backend (Placeholder - will be implemented in Unit U-001)
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: urlshortener-backend
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/urlshortener
+      SPRING_DATASOURCE_USERNAME: admin
+      SPRING_DATASOURCE_PASSWORD: secret
+      SPRING_FLYWAY_ENABLED: "true"
+      SPRING_FLYWAY_LOCATIONS: classpath:db/migration
+      JWT_SECRET: ${JWT_SECRET:-your-secret-key-change-in-production}
+    networks:
+      - urlshortener-network
+    # Note: Dockerfile will be created in Unit U-001 (Backend Core)
+
+  # React Frontend (Placeholder - will be implemented in Unit U-004)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: urlshortener-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - urlshortener-network
+    # Note: Dockerfile will be created in Unit U-004 (Frontend UI)
+
+volumes:
+  db-data:
+    driver: local
+
+networks:
+  urlshortener-network:
+    driver: bridge
